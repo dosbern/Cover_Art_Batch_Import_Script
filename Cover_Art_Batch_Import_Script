@@ -1,0 +1,219 @@
+import pyautogui
+import time
+
+# Get the screen size
+#screen_width, screen_height = pyautogui.size()
+
+# Move the mouse to the center of the screen and click
+#pyautogui.moveTo(screen_width / 2, screen_height / 2)
+#pyautogui.click()
+
+# pyautogui.click(450, 520) 
+#pyautogui.hotkey('enter')
+#pyautogui.displayMousePosition()
+
+#pyautogui.typewrite('a')
+#time.sleep(1)
+
+#20 files selected, mp3tag open, first file highlighted, click extended tags
+
+sleep_duration = .25
+number_of_songs = 100
+
+time.sleep(4)       
+print("Starting script...")
+
+#1
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+print("Step #1 TAB x3")
+
+#2
+pyautogui.hotkey('enter')
+time.sleep(sleep_duration)
+print("Step #2 ENTER")
+
+#3
+pyautogui.hotkey('shift', 'tab')
+time.sleep(sleep_duration)
+print("Step #3 SHIFT + TAB")
+
+#4
+pyautogui.press('home')
+time.sleep(sleep_duration)
+print("Step #4 HOME")
+
+#5
+pyautogui.press('right')
+time.sleep(sleep_duration)
+pyautogui.press('left')
+time.sleep(sleep_duration)
+print("Step #5 RIGHT, LEFT")
+
+#6
+pyautogui.hotkey('enter')
+time.sleep(sleep_duration)
+print("Step #6 ENTER")
+
+#7
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+print("Step #7 TAB x4")
+
+#8
+pyautogui.hotkey('enter')
+time.sleep(sleep_duration)
+pyautogui.hotkey('enter')
+time.sleep(sleep_duration)
+print("Step #8 ENTER x2")
+
+#Begin Loop
+print("Begin Loop")
+
+for i in range(2, number_of_songs):
+    down_moves = (i - 1) // 10
+    right_moves = (i - 1) % 10
+    time.sleep(1)
+    #9
+    pyautogui.hotkey('tab')
+    time.sleep(sleep_duration)
+    pyautogui.hotkey('tab')
+    time.sleep(sleep_duration)
+    pyautogui.hotkey('tab')
+    time.sleep(sleep_duration)
+    pyautogui.hotkey('tab')
+    time.sleep(sleep_duration)
+    pyautogui.hotkey('tab')
+    time.sleep(sleep_duration)
+    print(f"Song {i} Step #9 TAB x5")
+
+    #10
+    pyautogui.hotkey('enter')
+    time.sleep(sleep_duration)
+    print(f"Song {i} Step #10 ENTER")
+
+    #11
+    pyautogui.hotkey('shift', 'tab')
+    time.sleep(sleep_duration)
+    print(f"Song {i} Step #11 SHIFT + TAB")
+
+    #12
+    pyautogui.press('home')
+    time.sleep(sleep_duration)
+    print(f"Song {i} Step #12 HOME")
+
+    #12.5
+    pyautogui.press('right')
+    time.sleep(sleep_duration)
+    pyautogui.press('left')
+    time.sleep(sleep_duration)
+    print(f"Song {i} Step #12.5 RIGHT ARROW, LEFT ARROW")
+
+    #13A
+    for _ in range(down_moves):
+        pyautogui.press('down')
+        time.sleep(sleep_duration)
+    print(f"Song {i} Step #13A DOWN ARROW")
+
+    #13B
+    for _ in range(right_moves):
+        pyautogui.press('right')
+        time.sleep(sleep_duration)
+    print(f"Song {i} Step #13B RIGHT ARROW")
+
+    #14
+    pyautogui.hotkey('enter')
+    time.sleep(sleep_duration)
+    print(f"Song {i} Step #14 ENTER")
+
+    #15
+    pyautogui.hotkey('tab')
+    time.sleep(sleep_duration)
+    pyautogui.hotkey('tab')
+    time.sleep(sleep_duration)
+    pyautogui.hotkey('tab')
+    time.sleep(sleep_duration)
+    pyautogui.hotkey('tab')
+    time.sleep(sleep_duration)
+    pyautogui.hotkey('tab')
+    time.sleep(sleep_duration)
+    print(f"Song {i} Step #15 TAB x5")
+
+    #16
+    pyautogui.hotkey('enter')
+    time.sleep(sleep_duration)
+    pyautogui.hotkey('enter')
+    time.sleep(sleep_duration)
+    print(f"Song {i} Step #16 ENTER x2")
+
+    print("End of Loop")
+    time.sleep(1)
+
+print("End of Loop")
+
+#17
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+print("Last Song Step #17 TAB x3")
+
+#18
+pyautogui.hotkey('enter')
+time.sleep(sleep_duration)
+print("Last Song Step #18 ENTER")
+
+#19
+pyautogui.hotkey('shift', 'tab')
+time.sleep(sleep_duration)
+print("Last Song Step #19 SHIFT + TAB")
+
+#20
+pyautogui.press('home')
+time.sleep(sleep_duration)
+print("Last Song Step #20 HOME")
+
+#21
+down_moves = (number_of_songs - 1) // 10
+right_moves = (number_of_songs - 1) % 10
+for _ in range(down_moves):
+    pyautogui.press('down')
+    time.sleep(sleep_duration)
+for _ in range(right_moves):
+    pyautogui.press('right')
+    time.sleep(sleep_duration)
+print("Last Song Step #21 DOWN ARROW, RIGHT ARROW")
+
+#22
+pyautogui.hotkey('enter')
+time.sleep(sleep_duration)
+print("Last Song Step #22 ENTER")
+
+#23
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+pyautogui.hotkey('tab')
+time.sleep(sleep_duration)
+print("Last Song Step #23 TAB x3")
+
+#24
+pyautogui.hotkey('enter')
+time.sleep(sleep_duration)
+print("Last Song Step #24 ENTER")
+
+#End of script
+print("Script Finished")
